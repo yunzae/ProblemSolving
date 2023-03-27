@@ -20,7 +20,6 @@ def solve(bottle):
                 bottle.appendleft(bo2)
 
     return new_bottle
-
 def solve2(bottle):
     while(len(bottle)>1 and (bottle[-1]==bottle[-2] or bottle[0]==bottle[1])):
         bottle=solve(bottle)
