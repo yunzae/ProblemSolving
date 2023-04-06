@@ -17,16 +17,15 @@ def greedy(time,video_list):
     return(count)
 
 def bineary():
-    start=min(bluelay_list)
+    start=max(bluelay_list)
     end=sum(bluelay_list)
-    min_time=max(bluelay_list)
     time=end
     while start<=end:
         mid=(start+end)//2
         need_disk= greedy(mid, bluelay_list)
-        print("start: ", start,"end: ", end,"mid: ",mid,"need: ",need_disk)
+        # print("start: ", start,"end: ", end,"mid: ",mid,"need: ",need_disk)
 
-        if mid<time and mid>=min_time:
+        if mid<time:
             if need_disk<=M:
                 time = mid
                 end = mid - 1
