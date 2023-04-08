@@ -5,7 +5,6 @@ string = sys.stdin.readline().rstrip()
 
 
 
-
 print(string)
 def solve(string):
     first=[]
