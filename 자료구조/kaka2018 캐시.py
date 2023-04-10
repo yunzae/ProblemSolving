@@ -9,7 +9,7 @@ def solution(cacheSize, cities):
         city=city.lower()
         if city in cache:
             time+=1
-            c=cache.remove(city)
+            cache.remove(city)
             cache.append(city)
 
         else:
