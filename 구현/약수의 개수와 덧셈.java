@@ -1,3 +1,4 @@
+import java.util.*;
 class Solution {
     public int solution(int left, int right) {
         int answer = 0;
@@ -5,7 +6,7 @@ class Solution {
             int n = 0;
             for (int j=1;j<=i;j++){
                 if(i%j==0){
-                    n+=1;
+                    n++;
                 }
             }
             if (n%2==0){
@@ -19,6 +20,8 @@ class Solution {
             }
         }
 
+
+        
         return answer;
     }
 }
