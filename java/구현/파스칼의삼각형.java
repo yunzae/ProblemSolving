@@ -25,13 +25,15 @@ package 구현;/////////////////////////////////////////////////////////////////
 //System.out.println(var);		       				   // 문자열 1개 출력하는 예제
 //System.out.println(AB);		       				     // long 변수 1개 출력하는 예제
 /////////////////////////////////////////////////////////////////////////////////////////////
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /*
    사용하는 클래스명이 Solution 이어야 하므로, 가급적 Solution.java 를 사용할 것을 권장합니다.
    이러한 상황에서도 동일하게 java Solution 명령으로 프로그램을 수행해볼 수 있습니다.
  */
-public class Nqueen
+public class 파스칼의삼각형
 {
     public static void main(String args[]) throws Exception
     {
@@ -56,12 +58,40 @@ public class Nqueen
 
         for(int test_case = 1; test_case <= T; test_case++)
         {
+            Integer n = sc.nextInt();
+            List<List<Long>> ans = new ArrayList<>();
+            List<Long> ex = new ArrayList<>();
+            ex.add(1L);
+            ans.add(ex);
+            System.out.println("#"+ test_case);
+            for(int i =0;i<n-1;i++){
 
-            /////////////////////////////////////////////////////////////////////////////////////////////
-			/*
-				 이 부분에 여러분의 알고리즘 구현이 들어갑니다.
-			 */
-            /////////////////////////////////////////////////////////////////////////////////////////////
+                List<Long> temp = new ArrayList<>();
+                for(int j =0; j<ex.size()+1;j++) {
+
+                    if (j == 0 || j == ex.size()) {
+                        temp.add(1l);
+
+                    } else {
+                        temp.add(ex.get(j - 1) + ex.get(j));
+                    }
+                }
+                ans.add(temp);
+                ex=temp;
+                }
+
+
+            for(List<Long> a: ans){
+                StringBuilder sb = new StringBuilder();
+                for (Long digit : a) {
+                    sb.append(digit);
+                    sb.append(" ");
+                }
+                sb.deleteCharAt(sb.length()-1);
+
+                System.out.println(sb.toString());
+            }
+
 
         }
     }
